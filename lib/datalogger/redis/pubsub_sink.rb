@@ -3,13 +3,12 @@ require 'redis'
 require 'uri'
 
 module DataLogger
-  class RedisSink
+  class RedisPubSubSink
     VERSION='0.0.1'
 
     def initialize(opts={})
       redis_url = opts[:redis_url] || "redis://localhost:6379"
       uri = URI.parse(redis_url)
-
       @redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
       @channel = opts[:channel] || 'logs'
     end
