@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/datalogger-redis/version', __FILE__)
+require File.expand_path('../lib/datalogger/redis_sink', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Michael Gorsuch"]
@@ -13,5 +13,6 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "datalogger-redis"
   gem.require_paths = ["lib"]
-  gem.version       = Datalogger::Redis::VERSION
+  gem.version       = DataLogger::RedisSink::VERSION
+  gem.add_dependency('redis')
 end
