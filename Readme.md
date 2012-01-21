@@ -8,6 +8,6 @@ require 'datalogger'
 require 'datalogger/redis'
 
 l = DataLogger::Logger.new('myapp')
-l.sinks << DataLogger::RedisPubSubSink.new
+l.sinks << DataLogger::Sinks::RedisPubSub.new
 l.log a: 1, b: 2
 ```
