@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "datalogger-redis"
   gem.require_paths = ["lib"]
   gem.version       = DataLogger::Redis::VERSION
+  gem.add_dependency('datalogger')
   gem.add_dependency('json')
   gem.add_dependency('redis')
 end
